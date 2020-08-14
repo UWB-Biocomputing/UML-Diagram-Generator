@@ -1,6 +1,6 @@
 # Python 3
 
-#USAGE: python dotGenerator.py input_file_name.cpp output_file_name 
+#USAGE: python dotGenerator.py ./[PATH]/input_file_name.cpp output_file_name 
 #
 #Put this script into the same (or higher) directory as the file you want to pass it
 #and run it by passing in the file you want to start with and a name for the
@@ -1120,8 +1120,8 @@ def output_as(dot_file_name, file_ext, destination):
     :param file_ext: the file extension to output the graphs as, e.g. "png" or "pdf"
     :param destination: the directory to put the output file in, as a string
     """
-    os.system("dot -T" + file_ext + " " + dot_file_name + ".dot > out_" + dot_file_name + ".dot." + file_ext)
-    outfile_name = "out_" + dot_file_name + ".dot." + file_ext
+    os.system("dot -T" + file_ext + " " + dot_file_name + ".dot > " + dot_file_name + "." + file_ext)
+    outfile_name = dot_file_name + "." + file_ext
 
     # move the output file to this directory 
     cwd = os.getcwd()
